@@ -41,8 +41,10 @@ export function ImageProcessor({ nv }) {
 
       const isNewLayer = e.data.isNewLayer;
       if (isNewLayer) {
+        const name = processedImage.name;
         processedImage = processedImage.clone();
         processedImage.id = uuidv4();
+        processedImage.name = `${name}-processed`;
       }
 
       let imageBytes = e.data.imageBytes;
