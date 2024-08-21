@@ -1162,6 +1162,7 @@ function App() {
           )}
           {imageToolsPanel}
           {/* SceneTools here in the future! */}
+          <ImageProcessor nv={nv} />
         </Sidebar>
       );
       break;
@@ -1268,7 +1269,7 @@ function App() {
             ))}
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', paddingRight: 4 }}> {/* Increased paddingRight */}
-            <ImageProcessor nv={nv} />
+            { /* right justified header content */}
           </Box>
         </Box>
 
