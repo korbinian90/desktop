@@ -1162,7 +1162,7 @@ function App() {
           )}
           {imageToolsPanel}
           {/* SceneTools here in the future! */}
-          <ImageProcessor nv={nv} />
+          <ImageProcessor nv={nv} imageIndex={activeImage} />
         </Sidebar>
       );
       break;

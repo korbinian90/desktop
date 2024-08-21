@@ -3,7 +3,7 @@ import { Button, TextField, Checkbox, FormControlLabel, Box } from '@mui/materia
 
 import { v4 as uuidv4 } from 'uuid';
 
-export function ImageProcessor({ nv }) {
+export function ImageProcessor({ nv, imageIndex = 0 }) {
   // const [processedBuffer, setProcessedBuffer] = useState(null);
   const [command, setCommand] = useState('-dehaze 5 -dog 2 3.2');
   const [overlay, setOverlay] = useState(true);
@@ -74,9 +74,9 @@ export function ImageProcessor({ nv }) {
       // Determine whether to add or update the volume
       let imageIndex = nv.volumes.length;
       if (isNewLayer) {
-        if (imageIndex > 1) {
-          nv.removeVolume(nv.volumes[1].id);
-        }
+        // if (imageIndex > 1) {
+        //   nv.removeVolume(nv.volumes[1].id);
+        // }
         if (overlay) {
           nv.addVolume(processedImage);
           nv.setColormap(nv.volumes[1].id, 'red');
@@ -137,7 +137,6 @@ export function ImageProcessor({ nv }) {
       return;
     }
 
-    const imageIndex = 0;
     let image = nv.volumes[imageIndex];
     let metadata = image.getImageMetadata();
     const clone = image.clone();
