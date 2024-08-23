@@ -25,7 +25,7 @@
   },
   "license": "BSD-2-Clause",
   "dependencies": {
-    "@niivue/niimath": "^0.1.0",
+    "@niivue/niimath": "^0.1.1",
     "@niivue/niimath-js": "^0.0.1643874671203",
     "cors": "^2.8.5",
     "electron-squirrel-startup": "^1.0.0",
