@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+// import wasm from 'vite-plugin-wasm';
+import { copyFileSync } from 'fs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,4 +16,11 @@ export default defineConfig({
   build: {
     outDir: "../electron/ui",
   },
+  // worker as ESM format
+  worker: {
+    format: 'esm',
+  },
+  optimizeDeps: {
+    exclude: ['@niivue/niimath']
+  }
 });

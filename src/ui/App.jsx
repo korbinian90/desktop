@@ -17,6 +17,7 @@ import {
   NVMeshLoaders,
 } from "@niivue/niivue";
 import { NiivueCanvas } from "./components/NiivueCanvas";
+import { ImageProcessor } from "./components/ImageProcessor";
 import { Sidebar } from "./components/Sidebar";
 import { FileList } from "./components/FileList";
 import { MeshList } from "./components/MeshList";
@@ -1161,6 +1162,7 @@ function App() {
           )}
           {imageToolsPanel}
           {/* SceneTools here in the future! */}
+          <ImageProcessor nv={nv} imageIndex={activeImage} />
         </Sidebar>
       );
       break;
@@ -1236,18 +1238,26 @@ function App() {
             zIndex: "1000",
             backgroundColor: "white",
             width: "100%",
-            height: "50px"
+            height: "50px",
+            display: 'flex',
+            alignItems: 'center',
+            paddingX: 2,
+            justifyContent: 'space-between' // Distribute space between children
           }}
         >
-          <IconButton
-            aria-label="collapse"
-            onClick={toggleDrawer("hide", true)}
-          >
-            <ChevronLeftIcon color="primary" />
-          </IconButton>
-          {["volumes", "meshes", "settings"].map((anchor) => (
-            <Fragment key={anchor}>
-              <Button onClick={toggleDrawer(anchor, true)}>
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <IconButton
+              aria-label="collapse"
+              onClick={toggleDrawer("hide", true)}
+            >
+              <ChevronLeftIcon color="primary" />
+            </IconButton>
+            {["volumes", "meshes", "settings"].map((anchor) => (
+              <Button
+                key={anchor}
+                onClick={toggleDrawer(anchor, true)}
+                sx={{ marginX: 1 }}
+              >
                 <Typography
                   sx={{
                     textDecoration: sideBarState[anchor] ? "underline" : "",
@@ -1256,9 +1266,13 @@ function App() {
                   {anchor}
                 </Typography>
               </Button>
-            </Fragment>
-          ))}
+            ))}
+          </Box>
+          <Box sx={{ display: 'flex', alignItems: 'center', paddingRight: 4 }}> {/* Increased paddingRight */}
+            { /* right justified header content */}
+          </Box>
         </Box>
+
         <Box display={"flex"} flexDirection={"row"} height={"100%"} gap={"20px"} width={"100vw"} >
           {/* Sidebar: is the left panel that shows all files and image/scene widgets */}
           {sideBar}
