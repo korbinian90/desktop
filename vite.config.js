@@ -24,16 +24,3 @@ export default defineConfig({
     exclude: ['@niivue/niimath']
   }
 });
-
-/*
-optimizeDeps: {
-    include: ['@niivue/niimath-js/src/process-image.wasm'],
-  },
-
-rollupOptions: {
-      output: {
-        assetFileNames: 'assets/[name][extname]',
-      },
-    },
-    assetsInlineLimit: 0, // Ensure assets like WASM are not inlined but copied
-    */

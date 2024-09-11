@@ -6,7 +6,7 @@
   "main": "src/electron/index.js",
   "scripts": {
     "dev": "concurrently --kill-others \"npm run dev:ui\" \"electron-forge start -- --dev\"",
-    "dev:ui": "npm run prebuild && vite",
+    "dev:ui": "vite",
     "build:ui": "vite build",
     "start": "npm run build:ui && electron-forge start",
     "package": "npm run build:ui && electron-forge package",
