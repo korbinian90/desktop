@@ -49,6 +49,7 @@ Download the latest release from the [releases page](https://github.com/niivue/d
 
 ## Similar projects and alternatives
 
+- [NiiVue web app](https://niivue.github.io/niivue-vscode/) (identical to [niivue-vscode](https://marketplace.visualstudio.com/items?itemName=KorbinianEckstein.niivue), can be installed as desktop app via Chrome)
 - [3D Slicer](https://www.slicer.org/)
 - [ITK-SNAP](http://www.itksnap.org/pmwiki/pmwiki.php)
 - [FSLeyes](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FSLeyes)
